@@ -39,10 +39,12 @@ public class Event {
     }
 
     public String toString() {
-        return "Event{" +
+        String result =  "Event {" +
                 "title='" + title + '\'' +
                 ", city='" + city + '\'' +
                 ", price=" + price +
                 '}';
+
+        return result;
     }
 }
