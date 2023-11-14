@@ -1,6 +1,8 @@
 package org.campus02.events;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DemoApp {
 
@@ -29,5 +31,24 @@ public class DemoApp {
 
         System.out.println("ec.getByCity(\"Wien\") = " + ec.getByCity("Wien"));
         System.out.println("ec.getByCity(\"Klagenfurt\") = " + ec.getByCity("Klagenfurt"));
+
+        System.out.println("ec.getByPrice(5, 20) = " + ec.getByPrice(5, 20));
+
+        System.out.println("ec.getMostExpensive() = " + ec.getMostExpensive());
+        System.out.println("ec.getMostExpensive() = " + ec.getMostExpensive2("Wien"));
+
+
+        System.out.println("ec.getAvgPriceByCity(\"Graz\") = " + ec.getAvgPriceByCity("Graz"));
+        System.out.println("ec.getAvgPriceByCity(\"Wien\") = " + ec.getAvgPriceByCity("Wien"));
+        System.out.println("ec.getAvgPriceByCity2(\"Graz\") = " + ec.getAvgPriceByCity2("Graz"));
+
+        ec.add(new Event("Grazer Weihnachtsmarkt", "Graz-Hauptplatz", 0));
+
+        System.out.println("ec.getCountOfEventsPerCity() = " + ec.getCountOfEventsPerCity());
+
+        HashMap<String, Integer> map = ec.getCountOfEventsPerCity();
+        for (Map.Entry<String, Integer> entry : map.entrySet()){
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 }
